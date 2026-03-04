@@ -1,0 +1,10 @@
+.classpath
+.project
+.settings/
+bin/
+target/
+.idea/
+.vscode/
+
+# Email configuration properties file (contains sensitive credentials)
+src/main/resources/email-config.properties

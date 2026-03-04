@@ -1,0 +1,27 @@
+# Email Configuration Template for Ocean View Resort
+# Copy this file to email-config.properties and update with your actual values
+# Or use environment variables for better security
+
+# Mailtrap Configuration
+mail.smtp.host=smtp.mailtrap.io
+mail.smtp.port=2525
+mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.smtp.ssl.trust=smtp.mailtrap.io
+
+# Mailtrap Credentials (Replace with your actual Mailtrap credentials)
+# IMPORTANT: Never commit real credentials to version control!
+mail.smtp.username=your_mailtrap_username
+mail.smtp.password=your_mailtrap_password
+
+# Email Settings
+mail.from.email=billing@oceanviewresort.com
+mail.from.name=Ocean View Resort
+
+# Company Information
+company.name=Ocean View Resort
+company.address=Colombo City, Sri Lanka
+company.phone=+94 11 2345678
+company.email=info@oceanviewresort.com
+company.website=www.oceanviewresort.com
+company.tagline=Your Trusted Destination for a Perfect Getaway
