@@ -311,18 +311,18 @@
                     </c:choose>
                 </div>
 
-                <!-- Recent Activity Feed -->
+                <!-- Recent Activity Feed (Admin Only) / Quick Links (Staff) -->
                 <div class="xl:col-span-1">
+                  <c:choose>
+                    <c:when test="${sessionScope.role == 'admin'}">
                     <div class="bg-white rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
                         <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
                             <h3 class="text-sm font-bold text-gray-900">
                                 <i class="fas fa-stream mr-2 text-cyan-500"></i>Recent Activity
                             </h3>
-                            <c:if test="${sessionScope.role == 'admin'}">
                                 <a href="activity?action=list" class="text-xs text-cyan-600 hover:text-cyan-700 font-medium">
                                     View all <i class="fas fa-arrow-right ml-1"></i>
                                 </a>
-                            </c:if>
                         </div>
                         <div class="p-4 space-y-1 flex-1 overflow-y-auto" style="max-height: 420px;">
                             <c:choose>
@@ -362,6 +362,65 @@
                             </c:choose>
                         </div>
                     </div>
+                    </c:when>
+                    <c:otherwise>
+                    <!-- Staff: Quick Links Panel -->
+                    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
+                        <div class="px-5 py-4 border-b border-gray-100">
+                            <h3 class="text-sm font-bold text-gray-900">
+                                <i class="fas fa-bolt mr-2 text-cyan-500"></i>Quick Links
+                            </h3>
+                        </div>
+                        <div class="p-4 space-y-2 flex-1">
+                            <a href="reservation?action=add" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-cyan-50 transition-colors group">
+                                <div class="w-9 h-9 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-cyan-200 transition-colors">
+                                    <i class="fas fa-calendar-plus text-cyan-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">New Reservation</p>
+                                    <p class="text-xs text-gray-500">Create a booking</p>
+                                </div>
+                            </a>
+                            <a href="guest?action=add" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-emerald-50 transition-colors group">
+                                <div class="w-9 h-9 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                                    <i class="fas fa-user-plus text-emerald-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Register Guest</p>
+                                    <p class="text-xs text-gray-500">Add a new guest</p>
+                                </div>
+                            </a>
+                            <a href="room?action=list" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                                <div class="w-9 h-9 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                                    <i class="fas fa-bed text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">View Rooms</p>
+                                    <p class="text-xs text-gray-500">Check room availability</p>
+                                </div>
+                            </a>
+                            <a href="reservation?action=list" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-purple-50 transition-colors group">
+                                <div class="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                                    <i class="fas fa-list-alt text-purple-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">All Reservations</p>
+                                    <p class="text-xs text-gray-500">Manage bookings</p>
+                                </div>
+                            </a>
+                            <a href="guest?action=list" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-orange-50 transition-colors group">
+                                <div class="w-9 h-9 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                                    <i class="fas fa-address-book text-orange-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Guest Directory</p>
+                                    <p class="text-xs text-gray-500">Browse guest profiles</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    </c:otherwise>
+                  </c:choose>
                 </div>
             </div>
         </div>

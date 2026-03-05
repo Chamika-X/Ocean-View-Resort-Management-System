@@ -99,8 +99,12 @@ public class DashboardController extends HttpServlet {
             LocalDate endOfMonth = LocalDate.now();
             BigDecimal monthlyRevenue = billService.getRevenueForDateRange(startOfMonth, endOfMonth);
 
-            // Get recent activities
-            List<Activity> recentActivities = activityService.getRecentActivities(10);
+            // Get recent activities (admin only)
+            String role = (String) session.getAttribute("role");
+            List<Activity> recentActivities = null;
+            if ("admin".equals(role)) {
+                recentActivities = activityService.getRecentActivities(10);
+            }
 
             // Get all rooms for the room grid display
             List<Room> allRooms = roomService.getAllRooms();
