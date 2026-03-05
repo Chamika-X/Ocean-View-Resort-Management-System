@@ -236,14 +236,14 @@ public class UserManagementController extends HttpServlet {
 
 		// Set default role if empty
 		if (role == null || role.trim().isEmpty()) {
-			role = "user";
+			role = "staff";
 		}
 
 		// Validate input
-		Map<String, String> validationErrors = ValidationUtils.validateUser(username, password, role);
+		Map<String, String> validationErrors = ValidationUtils.validateUserWithRole(username, password, role);
 
 		// Add custom validation for confirm password
-		if (!password.equals(confirmPassword)) {
+		if (password != null && !password.equals(confirmPassword)) {
 			validationErrors.put("confirmPassword", "Passwords do not match");
 		}
 
@@ -302,12 +302,12 @@ public class UserManagementController extends HttpServlet {
 
 		// Set default role if empty
 		if (role == null || role.trim().isEmpty()) {
-			role = "user";
+			role = "staff";
 		}
 
 		// Validate username and role
-		Map<String, String> validationErrors = ValidationUtils.validateUser(username,
-				password != null && !password.trim().isEmpty() ? password : "dummy", role);
+		Map<String, String> validationErrors = ValidationUtils.validateUserWithRole(username,
+				password != null && !password.trim().isEmpty() ? password : "dummy123", role);
 
 		// Remove password validation if password is not being updated
 		if (password == null || password.trim().isEmpty()) {

@@ -106,7 +106,7 @@
 					class="fas fa-user-tag mr-2 text-cyan-600"></i>Role
 				</label> 				<select id="role" name="role" required
 					class="w-full px-4 py-3 border ${fieldErrors.role != null ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-cyan-500 focus:border-cyan-500'} rounded-lg transition-colors duration-200">
-					<option value="user" ${(requestScope.role != null && requestScope.role == 'user') || (requestScope.role == null && user.role == 'user') ? 'selected' : ''}>User</option>
+					<option value="staff" ${(requestScope.role != null && requestScope.role == 'staff') || (requestScope.role == null && user.role == 'staff') ? 'selected' : ''}>Staff</option>
 					<option value="admin" ${(requestScope.role != null && requestScope.role == 'admin') || (requestScope.role == null && user.role == 'admin') ? 'selected' : ''}>Admin</option>
 				</select>
 				<c:if test="${fieldErrors.role != null}">
