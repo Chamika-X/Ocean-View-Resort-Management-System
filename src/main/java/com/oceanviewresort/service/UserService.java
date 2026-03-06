@@ -108,7 +108,7 @@ public class UserService {
      * @throws SQLException if a database error occurs
      */
     public boolean registerUser(String username, String password) throws SQLException {
-        return registerUser(username, password, null, username, "user");
+        return registerUser(username, password, null, username, User.ROLE_STAFF);
     }
 
     /**

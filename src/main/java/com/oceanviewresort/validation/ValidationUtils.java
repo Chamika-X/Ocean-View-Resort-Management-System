@@ -503,6 +503,40 @@ public class ValidationUtils {
     }
 
     /**
+     * Validates user input fields for user management (username, password, role)
+     * @param username The username
+     * @param password The password
+     * @param role The user role
+     * @return Map of field names to error messages (empty if valid)
+     */
+    public static Map<String, String> validateUserWithRole(String username, String password, String role) {
+        Map<String, String> errors = new HashMap<>();
+
+        // Username validation
+        if (!isNotEmpty(username)) {
+            errors.put("username", "Username is required");
+        } else if (!isValidUsername(username)) {
+            errors.put("username", "Username must be 3-20 characters (letters, numbers, underscores)");
+        }
+
+        // Password validation
+        if (!isNotEmpty(password)) {
+            errors.put("password", "Password is required");
+        } else if (!hasMinLength(password, 6)) {
+            errors.put("password", "Password must be at least 6 characters");
+        }
+
+        // Role validation
+        if (!isNotEmpty(role)) {
+            errors.put("role", "Role is required");
+        } else if (!"admin".equals(role) && !"staff".equals(role)) {
+            errors.put("role", "Role must be either 'admin' or 'staff'");
+        }
+
+        return errors;
+    }
+
+    /**
      * Validates user input fields (3 parameter overload for basic registration)
      * @return Map of field names to error messages (empty if valid)
      */

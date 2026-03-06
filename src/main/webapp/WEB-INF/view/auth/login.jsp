@@ -120,19 +120,19 @@
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-all shadow-lg shadow-cyan-500/25 text-sm">
+                    class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-4 rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 transition-all shadow-lg shadow-cyan-500/25 text-sm">
                     <i class="fas fa-sign-in-alt mr-2"></i>Sign In
                 </button>
             </form>
 
-            <!-- Default Credentials -->
+            <!-- Default Credentials
             <div class="mt-6 p-4 bg-cyan-50 border border-cyan-200 rounded-xl">
                 <p class="text-xs text-cyan-800">
                     <i class="fas fa-info-circle mr-1.5"></i><strong>Default Credentials:</strong><br>
                     Admin: <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">admin</code> / <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">admin123</code><br>
                     Staff: <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">receptionist</code> / <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">staff123</code>
                 </p>
-            </div>
+            </div> -->
 
             <div class="mt-6 text-center text-xs text-gray-400">
                 <p>&copy; 2026 Ocean View Resort, Galle, Sri Lanka</p>
