@@ -125,14 +125,14 @@
                 </button>
             </form>
 
-            <!-- Default Credentials -->
+            <!-- Default Credentials
             <div class="mt-6 p-4 bg-cyan-50 border border-cyan-200 rounded-xl">
                 <p class="text-xs text-cyan-800">
                     <i class="fas fa-info-circle mr-1.5"></i><strong>Default Credentials:</strong><br>
                     Admin: <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">admin</code> / <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">admin123</code><br>
                     Staff: <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">receptionist</code> / <code class="bg-cyan-100 px-1.5 py-0.5 rounded text-xs">staff123</code>
                 </p>
-            </div>
+            </div> -->
 
             <div class="mt-6 text-center text-xs text-gray-400">
                 <p>&copy; 2026 Ocean View Resort, Galle, Sri Lanka</p>
