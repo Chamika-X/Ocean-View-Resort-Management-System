@@ -238,10 +238,10 @@
                 </div>
             </div>
 
-            <!-- 4. Expected Check-ins Today + Recent Activity (side by side) -->
-            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8">
+            <!-- 4. Expected Check-ins Today + Recent Activity (side by side for admin) -->
+            <div class="grid grid-cols-1 ${sessionScope.role == 'admin' ? 'xl:grid-cols-3' : ''} gap-6 mb-8">
                 <!-- Expected Check-ins Today (wider) -->
-                <div class="xl:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div class="${sessionScope.role == 'admin' ? 'xl:col-span-2' : ''} bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
                         <div>
                             <h3 class="text-lg font-bold text-gray-900">Expected Check-ins Today</h3>
@@ -311,7 +311,8 @@
                     </c:choose>
                 </div>
 
-                <!-- Recent Activity Feed -->
+                <!-- Recent Activity Feed (Admin Only) -->
+                <c:if test="${sessionScope.role == 'admin'}">
                 <div class="xl:col-span-1">
                     <div class="bg-white rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
                         <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
@@ -363,6 +364,7 @@
                         </div>
                     </div>
                 </div>
+                </c:if>
             </div>
         </div>
 
